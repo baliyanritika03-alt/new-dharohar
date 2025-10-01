@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Bootstrap Navbar</title>
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="news.css">
+  <!-- PageFlip (flipbook effect) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/page-flip/dist/css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+  <!-- PDF.js (renders PDF pages to canvas/images) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar container */
+    nav {
+      background: linear-gradient(90deg, #000000, #00220f);
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Flexbox for desktop */
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;;
+    }
+
+    /* Logo */
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* Links */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: rgb(0, 0, 0);
+      text-decoration: underline;
+      background-color: #1eff00;
+      border-radius: 5px;
+    }
+
+    /* Hamburger */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    /* Mobile menu */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #2E8B57;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+        border-radius: 0 0 8px 8px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo"><img src="logo1.jpg" alt="logo" height="60px" style="border-radius: 10px;"></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#About">About Us</a></li>
+        <li><a href="#best">Our Best Selling Products</a></li>
+        <li><a href="#allcat">Our Products</a></li>
+        <li><a href="#team">Gallery</a></li>
+
+      </ul>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+              <div class="d-none d-lg-block ms-3">
+      <a href="#get-touch" class="btn btn-primary" style="background-color: green;"> ☎ Contact Us</a>
+    </div>
+    </div>
+  </nav>
+
+  <script>
+    // Toggle menu for mobile
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
+<!-- Navbar End -->
+
+  </div>
+</nav>
+
+<!-- Home page section  -->
+<section class="hero" id="home">
+   <div class="hero-image" >
+      <img src="aboutpic.jpg" alt="Profile Photo" max-width: 100%; height: auto; display: block; width="500px">
+    </div>
+    <div class="hero-text">
+      <h1 style="font-weight: 700;">Welcome to <br> <span class="highlight"> </h1>
+        <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 700;" >Phoenix Plants Lifesaver Pvt. Ltd.</span>,
+        <br>Cultivating a greener future,<br> one harvest at a time.<br> Based in Agriculture.
+      </h1>
+      <p class="desc" style="font: size 25px;;">
+        “A Fertilizer company is an organization dedicated to producing and supplying plant nutrients 
+        that enrich the soil, Improve crop yield, and promote sustainable agriculture. By providing essential 
+        elements like Nitrogen, Phosphorus, and Potassium, fertilizer companies play a vital role in supporting 
+        farmers, enhancing food security, and ensuring healthier harvests for a growing world.”
+      </p>
+    </div> 
+  </section>
+ <!-- close home section  -->
+<section class="py-5" id="about">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Left Side: Tabs -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h6 class="text-primary fw-bold mb-3" id="About">About Us</h6>
+        <h6 class="text-primary fw-bold mb-3" id="read"></h6>
+        <!-- Tabs Nav -->
+        <ul class="nav nav-tabs mb-3" id="aboutTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="company-tab" data-bs-toggle="tab" data-bs-target="#company" type="button" role="tab">Our Company</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" type="button" role="tab">Our Mission</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button" role="tab">Our Vision</button>
+          </li>
+        </ul>
+        <!-- Tabs Content -->
+        <div class="tab-content" id="aboutTabsContent">
+          
+          <!-- Our Company -->
+          <div class="tab-pane fade show active" id="company" role="tabpanel">
+            <h3 class="fw-bold mb-3">Who We Are</h3>
+            <p>We started our journey in 2019 with a vision to make a transforming impact in agriculture society. We observed the 
+              problems and issues of the basic Agriculture System. We address the challenge of farming in typical rural areas and 
+              started working to find the solutions from the grass-roots level. At first, we marked the challenges of farmers that 
+              were stopping them from uplifting their farming culture. After this, we addressed the problems of the whole retail 
+              channel, which is forcing them to stick to traditional business practices. These practices are outdated and have 
+              lower financial returns. We acknowledged the network across the country and found significant trouble in terms of 
+              core fertilizer production and distribution stations. We worked with farmers, retailers, and traders in multiple 
+              geographical areas. After gathering all this data, we stabilized Phoenix Plants Lifesaver Pvt Ltd with a vision to 
+              make a transforming impact in Agriculture Society. </p>
+
+            <!-- READ MORE  -->
+            <!-- CLOSE READ MORE  -->
+            </div>
+            <!-- Our Mission -->
+            <div class="tab-pane fade" id="mission" role="tabpanel">
+              <h3 class="fw-bold mb-3">Our Mission</h3>
+              <p>We are going to transform the whole service channel of chemical fertilizers in Indian Agriculture system.
+            Which is running from decades on the same patterns and terminology. Our Mission is to provide the quality and 
+            productivity to the farmers with our products and services without challenging their beliefs, delivering faith 
+            and internal business opportunities to the whole established service channel, 
+            which they deserve and never got before due to the current service system. We are committed to change the stacies 
+            and reliability on imported chemical fertilizers and stabilize an "Made in India" service systems under the norms 
+            and approach of FCO and Indian Government. This will express our passion towards transforming this Agriculture 
+            system in INDIA.</p>
+              <!-- <a href="#read" class="btn btn-primary mt-2">Learn More</a> -->
+            </div>
+
+            <!-- Our Vision -->
+            <div class="tab-pane fade" id="vision" role="tabpanel">
+            <h3 class="fw-bold mb-3">Our Vision</h3>
+            <p>We developed a unique range of products and services in core fertilizers segment under the FCO guidelines of 
+              the Indian Government. We spread our services across various geographical areas, and found our concept and 
+              services can make a huge impact. Currently, we fulfill a major part of core fertilizers needed in Northern India, 
+              and are committed to continuous improvement through our R&D division, equipped with modern experimental facilities. 
+              We look forward to developing more qualified quality control management and establishing strict adherence to all 
+              quality norms, ensuring delivery of top-quality products and services.We promise to give a faithful, uplifting, 
+              and sustainable service to the National Agriculture Society.</p>
+            <!-- <a href="#read" class="btn btn-primary mt-2">Learn More</a> -->
+          </div>
+        </div>
+      </div>
+
+            <!-- Right Side: Image -->
+            <div class="col-lg-6 text-center">
+              <img src="home page.png" alt="About Us" class="img-fluid rounded shadow">
+            </div>
+            <!-- READ MORE SECTION  -->
+            <style>
+    :root{
+      --gap: 12px;
+      --btn-bg: #0077cc;
+      --btn-color: #fff;
+      --btn-radius: 10px;
+    }
+
+   
+    .card{
+      max-width: 150PX;
+      /* margin: 0 auto; */
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(16,24,40,0.06);
+      padding: 10px;
+      gap: var(--gap);
+      /* display: flex; */
+      /* flex-direction: column; */
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      background:var(--btn-bg);
+      color:var(--btn-color);
+      border-radius:var(--btn-radius);
+      text-decoration:none;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      width: 150px;
+      align-items: center;
+    }
+    .btn:hover{
+      color: #ffffff;
+      background-color: #1e3228;
+    }
+
+    /* On small screens, use smaller height so it fits well */
+    @media (max-width: 720px){
+      .pdf-embed{ height:48vh; }
+      .controls{ gap:8px; }
+      .title{ font-size:14px; }
+    }
+
+            </style>
+                  <a id="directDownload" class="btn" href="Dharohar Catalogue 2025.pdf" aria-label="Download PDF directly">
+                    READ MORE...
+                  </a>
+                </div>
+              </div>
+           <!-- cLOSE READ MORE  -->
+        </div>
+      </div>
+</section>
+<!-- Our Best Selling Product  -->
+    <section class="py-5 bg-light" id="best">
+      <div class="container">
+        <!-- Heading -->
+        <div class="text-center mb-5">
+          <h2 class="fw-bold" id="project"> Our Best Selling Products</h2>
+          <p class="text-muted">A showcase of our latest works in various categories</p>
+        </div>      
+        </ul>
+        <!-- Tabs Content -->
+        <div class="tab-content" id="projectTabsContent">
+          <!-- All Projects Tab -->
+          <div class="tab-pane fade show active" id="all" role="tabpanel">                        
+        <div class="row g-4">
+          <h3>These Products are Best Selling Products in Haryana, Uttar Pradesh, Bihar and Others</h1>
+          <!-- Row 1 -->
+          <div class="col-md-4 align-self-end">
+            <div class="project-card" style="height: 300px; width: 100%;text-align:center">
+              <img src="pro1.png" class="img-fluid rounded" alt="Project" style="height: 300px; width: 100%">
+              <p style="font-weight: bold; text-shadow: 2px;">Kurukshetra Product Launching Event</p>
+              <div class="overlay">
+                <h5>BHARAT NPK</h5>
+                <p>"It control water stress during the fruit maturation phase can increases sugar concentration , flavour and colour development."</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 align-self-start">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+              <img src="PRO8.png" class="img-fluid rounded" alt="Project" style =  max-width:100%; height: auto; display: block; width="500px">
+              <p style="font-weight:bold";>Jind Product Launching Event</p>
+              <div class="overlay">
+                <h5>MONO SSP+</h5>
+                <p>"Improves crop quality and yield, hence increases income for the farmers. Reduces pest incidence, Hence reduces pest control price".</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 align-self-end">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+              <img src="PRO7.png" class="img-fluid rounded" alt="Project" style="max-width: 100%; height: auto; display: block; width=500px">
+              <p style="font-weight: bold;">Hissar Product Launching Event</p>
+              <div class="overlay">
+                <h5>PHINO-CAL</h5>
+                <p>"Effective for Improving flower & fruit retension. Boost Nodulation in legume crops"</p>
+              </div>
+            </div>
+          </div>
+<!-- product categories -->
+          <!-- Row 1 -->
+          <div class="col-md-4 align-self-end">
+            <div class="project-card" style="height: 300px; width: 100%;text-align:center">
+              <img src="PRO4.png" class="img-fluid rounded" alt="Project" style="height: 300px; width: 100%">
+              <p style="font-weight: bold; text-shadow: 2px;">Kurukshetra Product Launching Event</p>
+              <div class="overlay">
+                <h5>PHINO-POTASH</h5>
+                <p>"It increases root growth and improves drought resistance and balance electric changes in various parts of cells."</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 align-self-start">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+              <img src="PRO5.png" class="img-fluid rounded" alt="Project" style="height: 300px; width: 100%">
+              <p style="font-weight: bold;">Jind Product Launching Event</p>
+              <div class="overlay">
+                <h5>MONO SSP</h5>
+                <p>"Increases nutrient use efficiency, Hence reduces costs on fertilizers. Reduces flower drop and increases fruit setting."</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 align-self-end">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+              <img src="PRO6.png" class="img-fluid rounded" alt="Project" style="height: 300px; width: 100%">
+              <p style="font-weight: bold;">Hissar Product Launching Event</p>
+              <div class="overlay">
+                <h5>BHARAT-POTASH</h5>
+                <p>"Helps to protect plants from diseases and pests. Improved shelf life of the produce."</p>
+              </div>
+            </div>
+          </div>
+      <!-- Other tabs (App, Product, Branding, Books) can reuse same structure -->
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f9f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2b4a3d;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: inherit;
+    }
+    .categories a{
+      text-decoration: none;
+      color: inherit;
+      font-weight: 700;
+    }
+
+    .category {
+      width: 300px;
+      height: 300px;
+      text-align: center;
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    }
+
+    .category img {
+      width: 100%;
+      height: 200px;
+      object-fit: fill;
+      border-radius: 8px;
+
+    }
+
+    .category h3 {
+      margin-top: 10px;
+      color: #333;
+      size: 5px;
+      
+
+
+    }
+
+    .products {
+      display: none;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .product {
+      width: 160px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 15px;
+      background: #2b4a3d;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: #1e3228;
+    }
+  </style>
+  <h2 id="allcat">Fertilizer Categories</h2>
+  <!-- Categories Section -->
+ 
+  <div id="categorySection" class="categories">
+    <div class="category" onclick="showProducts('primary')">
+      <img src="primaryfertiliser.jpg" alt="Advance Fertilizer" style="max-width: 100%; height: auto; display: block; width:500px">
+      <a href="product1.html"><h3>Primary Fertilizers</h3></a>
+    </div>
+    <div class="category" onclick="showProducts('water')">
+      <img src="watersolublefertiliser.jpg" alt="Water Soluble Fertilizer" style="max-width: 100%; height: auto; display: block; width:500px">
+      <a href="product2.html"><h3>Water Soluble Fertilizers</h3></a> 
+    </div>
+    
+    <div class="category" onclick="showProducts('micronutrient')">
+      <img src="micronutrientfertilizer.jpg" alt="micro-nutrient Fertilizer" style="max-width: 100%; height: auto; display: block; width:500px">
+      <a href="product3.html"><h3>Micro-nutrient fertilizers</h3></a>
+    </div>
+    <div class="category" onclick="showProducts('advance')">
+      <img src="advancefertilizer.jpg" alt="advance" style="max-width: 100%; height: auto; display: block; width:500px">
+     <a href="product4.html"><h3>Advance Soluble Fertilizers</h3></a>
+    </div>
+  </div>
+
+<!-- </section> -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" id="project">Our Activities and Promotional/Marketing Team</h2>
+      <p class="text-muted">A showcase of our latest works in various categories</p>
+    </div>
+    </ul>
+    <!-- Tabs Content -->
+    <div class="tab-content" id="projectTabsContent">
+      <!-- All Projects Tab -->
+      <div class="tab-pane fade show active" id="all" role="tabpanel">
+        <div class="row g-4">
+          <marquee behavior="alternate" direction=""><h1 style="font-weight: 800;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Product Launching</h1></Marquee>
+          <!-- Row 1 -->
+          <div class="col-md-4 align-self-end">
+            <div class="project-card" style="height: 300px; width: 100%;text-align:center">
+              <img src="Pro-1.jpg" class="img-fluid rounded" alt="Project" style="max-width: 100%; height: auto; display: block; width:500px">
+              <p style="font-weight: bold; text-shadow: 2px;">Kurukshetra Product Launching Event</p>
+              <div class="overlay">
+                <h5>Kurukshetra Product Launching</h5>
+                <p>"Every great innovation starts with a <br>single step — today, we take ours."</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 align-self-start">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+              <img src="Pro-2.jpg" class="img-fluid rounded" alt="Project" style="max-width: 100%; height: auto; display: block; width:500px">
+              <p style="font-weight: bold;">Jind Product Launching Event</p>
+              <div class="overlay">
+                <h5>Jind Product Launching</h5>
+                <p>"Get ready — the game is about to change."</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 align-self-end">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+              <img src="Pro-3.jpg" class="img-fluid rounded" alt="Project" style="max-width: 100%; height: auto; display: block; width:500px">
+              <p style="font-weight: bold;">Hissar Product Launching Event</p>
+              <div class="overlay">
+                <h5>Hissar Product Launching</h5>
+                <p>"Innovation is here. The future starts now."</p>
+              </div>
+            </div>
+          </div>
+           <div class="row g-4">
+          <!-- Row 2 -->
+           <marquee behavior="alternate" direction=""><h1 style="font-weight: 800;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Our Launching Campaign</h1></marquee>
+          <div class="col-md-4 align-self-start">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+               <img src="c-1.jpg" class="img-fluid rounded" alt="Project" style="max-width: 100%; height: auto; display: block; width:500px">
+              <div class="overlay">
+                <h5>Campaign Launching </h5>
+                <p>Our Campaign Work in Narwana District meet farmer</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 align-self-end">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+               <img src="c-2.jpg" class="img-fluid rounded" alt="Project" style="max-width: 100%; height: auto; display: block; width:500px">
+              <div class="overlay">
+                <h5>Narwana (Haryana) Farmer Meeting</h5>
+                <p style="padding: 25px;">Our Agent with Narwana farmer and describe the about Our Product</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 align-self-start">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+               <img src="c-3.jpg" class="img-fluid rounded" alt="Project" style="max-width: 100%; height: auto; display: block; width:500px">
+              <div class="overlay">
+                <h5>Jind (Haryana) Campaign</h5>
+                <p>Our Agent with Narwana farmer and describe the about Our Product</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row 3 -->
+          <marquee behavior="alternate" direction=""><h1 style="font-weight: 800;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Haryana Kisan Mela</h1></marquee>
+          <div class="col-md-4 align-self-end">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+              <img src="m-1.jpg" class="img-fluid rounded" alt="Project" style="max-width: 100%; height: auto; display: block; width:500px">
+              <h1 style="font-size: 2rem; color: rgb(0, 0, 0); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"></h1>
+              <div class="overlay">
+                <h5>HARYANA KISAN MELA</h5>
+                <p>"Haryana Kisan Mela is a grand agricultural fair showcasing modern farming techniques, new technologies, and farmer-friendly solutions."</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 align-self-start">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+              <img src="m-2.jpg" class="img-fluid rounded" alt="Project" style="max-width: 100%; height: auto; display: block; width:500px">
+              <div class="overlay">
+                <h5>HARYANA KISAN  MELA</h5>
+                <p>"A platform where farmers, experts, and agri-industries come together to share knowledge, innovations, and opportunities in agriculture."</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 align-self-end">
+            <div class="project-card" style="height: 300px; width: 100%; text-align:center">
+              <img src="m-3.jpg" class="img-fluid rounded" alt="Project" style="max-width: 100%; height: auto; display: block; width:500px">
+              <div class="overlay">
+                <h5>HARYANA KISAN MELA</h5>
+                <p>"It celebrates the hard work of farmers and promotes sustainable growth in Haryana’s agriculture sector."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Other tabs (App, Product, Branding, Books) can reuse same structure -->
+    </div>
+  </div>
+</section>
+<section class="py-5 bg-light">
+  <!-- News Section -->
+  <section class="news-section">
+    <h2 style="font-weight: 800;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">DHAROHAR LATEST UPDATES</h2>
+    <div class="news-cards">
+      <div class="news-card">
+        <img src="news1.webp" alt="News 1" style="object-fit: contain;">
+        <a href="https://www.khojinews.co.in/national-international/crop-nutrition-revolution-phin-16-farm-production-long-term-soil-health-1433540" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="news-card">
+          <div class="news-content">
+            <h3> Phino-16 की कहानी किसानो की जुबानी </h3>
+            <p>फसलों की पोषण क्रांति फिनो -16 खेतों में उत्पादन- मिट्टी की लम्बी सेहत</p>
+          </div>
+        </div>
+      </a>
+      </div>
+      <div class="news-card">
+        <img src="new2.jpg" alt="News 1" style="object-fit: contain;">
+        <a href="https://www.aurguru.com/phoenix-plants-lifesaver-pvt-ltd-new-model-agricultural-september-2025" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="news-card">
+          <div class="news-content">
+            <h3> ग्रामीण भारत में कृषि विकास का नया मॉडल </h3>
+            <p>N P K 22:22:11 कि कहानी किसानो की जुबानी</p>
+          </div>
+        </div>
+      </a>
+      </div>
+        <div class="news-card">
+        <img src="new3.jpg" alt="News 1" style="object-fit: contain;">
+        <a href="https://youtu.be/_WcSpDZ3Zz4?feature=shared" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="news-card">
+          <div class="news-content">
+            <h3> Phoenix Plants Lifesaver Pvt. Ltd. </h3>
+            <p>शुद्धता एवं समृद्धि का प्रतिक ...!</p>
+          </div>
+        </div>
+      </a>
+      </div>
+        <div class="news-card">
+          <img src="new4.jpg" alt="News 1">
+          <a href="https://vijaybharat.in/operating-under-the-fco-guidelines-of-the-government-of-india-phoenix-plants-lifesaver-pvt-ltd-has-carved-a-unique-niche-for-itself-in-the-core-fertilizer-sector/" target="_blank" style="text-decoration:none; color:inherit;">
+          <div class="news-card">
+            <div class="news-content">
+              <h3> NPK stands for Nitrogen (N), Phosphorus (P), and Potassium (K). The numbers 22:22:11 represent the percentage of each nutrient in the fertilizer. </h3>
+              <p>NPK 22:22:11</p>
+            </div>
+          </div>
+        </a>
+        </div>
+    </div>
+  </section>
+  </section>
+  <!-- Team Section -->
+  <section class="team-section" id="team">
+    <h2 style="font-weight: 800;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Our Team</h2>
+    <div class="team-members">
+      <div class="member">
+        <img src="vatanbaliyan.jpg" alt="Team Member 1">
+        <h2>Vatan Baliyan</h2>
+        <h3>CEO (Chief Executive Officer)</h3>
+        <!-- <p>A Business Director is a senior professional responsible for driving a company’s growth, managing operations, and leading strategic decision-making.</p> -->
+      </div>
+      <div class="member">
+        <img src="prizebaliyan.jpg" alt="Team Member 2">
+        <h2>Prize Baliyan</h2>
+        <h3>MD(Managing Director)</h3>
+        <!-- <p>A Business Production Manager oversees the planning, coordination, and efficiency of production processes to ensure quality output and timely delivery.</p> -->
+      </div>
+      <div class="member">
+        <img src="badalbaliyan.jpg" alt="Team Member 3">
+        <h2>Badal Baliyan</h2>
+        <h3>Logistics Manager</h3>
+        <!-- <p>HRM (Human Resource Management) is the strategic approach to managing people in an organization by recruiting, developing, and retaining talent effectively.</p> -->
+      </div>
+      <div class="team-members">
+      <div class="member">
+        <img src="mohan1.jpg"Team Member 1>
+        <h2>Mohan Vaidwan</h2>
+        <h3>Divisional Cooperative Development Manager</h3>
+        <!-- <p>A Business Director is a senior professional responsible for driving a company’s growth, managing operations, and leading strategic decision-making.</p> -->
+      </div>
+    </div>
+  </section>
+<section class="team-section">
+    <div class="team-members">
+      <div class="member">
+        <img src="mohit1.jpg" alt="Team Member 1">
+        <h2>Mohit Vaidwan</h2>
+        <h3>Cooperative fertilizer Officer</h3>
+        <!-- <p>A Business Director is a senior professional responsible for driving a company’s growth, managing operations, and leading strategic decision-making.</p> -->
+      </div>
+      <div class="member">
+        <img src="rana.jpg" alt="Team Member 2">
+        <h2>Shubham Rana</h2>
+        <h3>Chief Operating Officer</h3>
+        <!-- <p>A Business Production Manager oversees the planning, coordination, and efficiency of production processes to ensure quality output and timely delivery.</p> -->
+      </div>
+      <div class="member">
+        <img src="avik1.jpg" alt="Team Member 3">
+        <h2>Avik Baliyan</h2>
+        <h3>HRM(Human Resource Manager)</h3>
+        <!-- <p>HRM (Human Resource Management) is the strategic approach to managing people in an organization by recruiting, developing, and retaining talent effectively.</p> -->
+      </div>
+
+      <div class="team-members">
+      <div class="member">
+        <img src="ashutosh kandari edited photo.png" alt="Team Member 1">
+        <h2>Ashutosh Kandari</h2>
+        <h3>Chief Financial Officer</h3>
+        <!-- <p>A Business Director is a senior professional responsible for driving a company’s growth, managing operations, and leading strategic decision-making.</p> -->
+      </div>
+<!-- <section class="team-section"></section> -->
+  <div class="team-members">
+      <div class="member">
+        <img src="love1.jpg" alt="Team Member 1">
+        <h2>Love Kumar </h2>
+        <h3>Production Manager</h3>
+        <!-- <p>A Business Director is a senior professional responsible for driving a company’s growth, managing operations, and leading strategic decision-making.</p> -->
+      </div>
+  </section> 
+  <section id="get-touch">
+    <footer id="Contact" class="bg-dark text-light pt-5" >
+          <div class="container">
+            <div class="row gy-4">
+              <!-- About -->
+              <div class="col-lg-3 col-md-6">
+                <h5 class="mb-3">About Us</h5>
+                <p>We are a leading company providing quality services and solutions worldwide, driven by innovation and excellence.</p>
+              </div>
+            <!-- Quick Links -->
+            <div class="col-lg-3 col-md-6">
+              <h5 class="mb-3">Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+                <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                <li><a href="#" class="text-light text-decoration-none">Our Services</a></li>
+                <li><a href="#" class="text-light text-decoration-none">Our Projects</a></li>
+                <li><a href="#" class="text-light text-decoration-none">Contact Us</a></li>
+              </ul>
+            </div>
+      <!-- Services -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="mb-3">Services</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-light text-decoration-none">Advance Fertilizers</a></li>
+              <li><a href="#" class="text-light text-decoration-none">primary Fertilizers</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Micro nutrient Fertilizers</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Water-Soluble Fertilizers</a></li>
+              <!-- <li><a href="#" class="text-light text-decoration-none">Liquid Fertilizers</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Water Soluble Fertilizers</a></li> -->
+            </ul>
+          </div>
+      <!-- Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="mb-3">Contact Us</h5>
+            <p><i class="bi bi-geo-alt-fill text-primary"></i> Regd. Office : S.NO. COD, 3rd Floor, Dharampali Palace Bhoja Market,0 Atta-Sector-27, Noida-201301 (U.P.) INDIA </p>
+            <p><i class="bi bi-telephone-fill text-primary"></i>Toll Free No. 1800 569 3914</p>
+            <p><i class="bi bi-envelope-fill text-primary"></i> support@phoenixplantslifesaverpvtltd.com</p>
+            <!-- Social Icons -->
+            <div class="mt-3">
+              <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+          <!-- Bottom Bar -->
+          <div class="text-center mt-4 border-top border-secondary pt-3">
+            <p class="mb-0">&copy; 2019 Phoenix Plants Lifesaver Pvt. Ltd.  All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</section>
+<!-- Click to top  -->
+  <!-- Button -->
+  <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+<script src="Script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
