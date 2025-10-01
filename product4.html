@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Product Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .pro-de{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 35px;
+      color: #ffcc00;
+      font-weight: 700;
+      box-sizing: border-box;
+     background-color: #0d1b2a;
+     padding: 35px;
+      }
+
+    .pro-detail{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    text-decoration: underline;
+    box-sizing: border-box;
+   background-color: #555;
+   padding: 35px;
+    }
+    .product-container {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      max-width: 900px;
+      margin: 25px auto;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .product-details {
+      padding: 20px;
+    }
+
+    .product-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      font-size: 20px;
+      color: #e67e22;
+      margin-bottom: 15px;
+    }
+
+    .product-description {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .add-to-cart {
+      background-color: #2ecc71;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background-color: #27ae60;
+    }
+
+    /* Desktop Layout */
+    @media (min-width: 768px) {
+      .product-container {
+        flex-direction: row;
+      }
+
+      .product-image {
+        width: 50%;
+        height: auto;
+      }
+      .pro-detail{
+        size: 25px;
+      }
+
+      .product-details {
+        width: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="pro-de"> ADVANCE FERTILIZERS</h1>
+  <div class="product-container">
+    <img class="product-image" src="ALL PRO/SAMUNDRIKA.jpg"alt="Product Image"/>
+    <div class="product-details">
+      <h1 class="product-title">SAMUNDRIKA (Seaweed Fortified Granular/Liquid)</h1>
+      <p class="product-price">Technical Name : Sargassum Tenerrimum 2% (Granular), Sargassum tenerrimum 10% (Liquid)
+</p>
+      <p class="product-price">Packing :  10 kg, 500 ml, 1 litre & 5 litre</p>
+      <p class="product-price">Developed by PPL. Made in India.</p>
+      <p class="product-price">USPs :</p>
+      <p class="product-description">
+        <ul>
+          <li>
+            Ultrador increase Crop yield and quality by Improving the expression of the genetic potential.
+          </li>
+          <li>
+           Ultrador contains 4 most special enhancers, which are super effective to increase xylem and phloem circulation in plants
+
+          </li>
+          <li>
+           Ultrador is an epic composition of plant growth regulator elements which gives explosive growth to plants in every stage of crop.
+
+          </li>
+
+           <B>Dosage : 50 Kg / Acre </B>
+         
+        </ul>
+     
+    </div>
+  </div>
+
+
+
+
+  <div class="product-container">
+    <img class="product-image" src="ALL PRO/COMPLETE DOSE.png"alt="Product Image"/>
+    <div class="product-details">
+      <h1 class="product-title">  COMPLETE DOSE</h1>
+      <p class="product-price">Technical Name :  An epic combination of micronutrients, Plant growth Regulator, Bio insecticides and fungicides</p>
+      <p class="product-price">Packing: 10 kg</p>
+      <p class="product-price">Developed by PPL Made in India.</p>
+      <p class="product-price">USPs :</p>
+      <p class="product-description">
+        <ul>
+          <li>
+          Complete dose is an all-rounder combination for crops.
+          </li>
+          <li>
+           It increases yield significantly, stops flower drop and fruit drop, Improves quality of crops, enhances protein synthesis, increases tolerance against diseases and climate stresses and increase tillers in plants.
+
+          </li>
+          <li>
+           Strengthens the root and plant system.
+          </li>
+          <li>
+            Its Contain sulphur with K2o that's Why sea potash also react like fungicide in soil and also increase the xylem and 
+            phloem circulation in tha plants.
+          </li>
+        </ul>
+      </p>
+    <b>  Dosage: 10 kg / Acre (Soil)</b>
+
+    
+    </div>
+  </div>
+
+
+
+
+
+  <div class="product-container">
+    <img class="product-image" src="ALL PRO/PHINO-GOLD.png"alt="Product Image"/>
+    <div class="product-details">
+      <h1 class="product-title"> PHINO-GOLD (Humic Acid – 98%)</h1>
+      <p class="product-price">Technical Name : Potassium Humate - 98%</p>
+      <p class="product-price">Packing : 250 gm, 500 gm & 1 kg</p>
+      <p class="product-price">Made In INDIA</p>
+      <p class="product-price">USPs :</p>
+      <p class="product-description">
+        <ul>
+          <li>
+           Humic acid increase the availability of nutrients to plant roots and improves soil structure.
+          </li>
+          <li>
+            Increases water holding capacity of soil Improves drought resistance of soil.
+                Helps intake and movement of nutrient around the plants 
+          </li>
+         
+        </ul>
+      </p>
+    <b> Dosage: 1-1.5 gm / Litre (Foliar) 500gm 1 kg / Acre (Soil / Drip)</b>
+
+  </div>
+
+ </div>
+
+
+
+  <div class="product-container">
+    <img class="product-image" src="ALL PRO/RAISER-90.png"alt="Product Image"/>
+    <div class="product-details">
+      <h1 class="product-title">RAISER-90</h1>
+      <p class="product-price">Technical Name : Highly concentrated non-lonic adjuvant with 90% active ingredients</p>
+       <p class="product-price">Packing : 100 ml, 250ml, 500ml, 1 Litre & 5 Litre</p>
+      <p class="product-price">Developed by PPL Made in India.</p>
+      <p class="product-price">USPs :</p>
+      <p class="product-description">
+        <ul>
+          <li>
+           Raiser-90 increase crop yield by improving pesticide coverage.
+          </li>
+          <li>
+           It activates the spray fluid to moisten the plant surface and allows uniform spreading of spray deposits.
+
+          </li>
+          <li>
+           A helpful tool in irrigation, it improves the water absorption in soil it helps and facilitates uniform mixing of powders, pesticides and most liquid fertilizers.
+
+          </li>
+          <li>
+           It is completely non - Phytotoxic, safe and eco - friendly, use in fungicides herbicides, insecticides, foliar fertilizers plant nutrients and defoliators.
+          </li>
+        </ul>
+     <B> Dosage: 0.5-1ml / litre (Foliar) 250 ml/ Acre (soil / Drip)</B>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Footer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #0d1b2a, #1b263b);
+      color: #e0e1dd;
+      padding: 50px 20px 20px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #ffcc00;
+    }
+
+    .footer-column p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin: 8px 0;
+    }
+
+    .footer-column ul li a {
+      color: #e0e1dd;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 14px;
+    }
+
+    .footer-column ul li a:hover {
+      color: #ffcc00;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      background: #e0e1dd;
+      color: #0d1b2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 18px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: #ffcc00;
+      transform: scale(1.1);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      border-top: 1px solid #33415c;
+      padding-top: 15px;
+      color: #bfc0c0;
+    }
+
+    /* Responsive text size */
+    @media (max-width: 768px) {
+      .footer-column h3 {
+        font-size: 18px;
+      }
+      .footer-column p,
+      .footer-column ul li a {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-container {
+        text-align: center;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Responsive Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <p>We provide high-quality fertilizers and agricultural solutions to help farmers achieve better crop yields and sustainable farming.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <p>Email: support@phoenix.com</p>
+        <p>Phone: +91 7248444499</p>
+        <p>Toll Free No. 1800 5693 914</p>
+        <p>Address: Regd. S.No. COD 3rd Floor, Dharampali Palace Bhoja Market Atta sector-27, Noida - 201301 U.P.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#">F</a>
+          <a href="#">I</a>
+          <a href="#">X</a>
+          <a href="#">Y</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Phoenix Life Saver Pvt. Ltd. | All Rights Reserved
+    </div>
+  </footer>
+
+</body>
+</html>
+
+</body>
+</html>

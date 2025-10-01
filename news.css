@@ -1,0 +1,152 @@
+<!-- news section css -->
+
+  <div class="container">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* News Section */
+    .news-section {
+      margin-top: 20px;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .news-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      /* background-color: green; */
+
+    }
+    .news-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    
+    }
+    .news-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+        /* border: 3px solid green; */
+    }
+    .news-card:hover {
+      transform: translateY(-8px);
+    }
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .news-card .content {
+      margin-top: 5px;
+      padding: 15px;
+      text-align: left;
+      height: 100px;
+    }
+    .news-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    /* Team Section */
+    .team-section {
+      padding: 50px 20px;
+      text-align: center;
+      background: #eef4ff;
+    }
+    .team-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      /* background-color: green; */
+    }
+    .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    .member {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      overflow: hidden;
+      transition: transform 0.3s;
+        /* border: 3px solid green; */
+    }
+    .member:hover {
+      transform: translateY(-8px);
+    }
+    .member img {
+      width: 100%;
+      height: 400px; /* rectangular box */
+      object-fit: cover;
+    }
+    .member h3 {
+      font-size: 1.2rem;
+      margin: 15px 0 5px;
+    }
+    .member p {
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+
+    /* </news section css> */
+
+
+    /* body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    } */
+
+    /* Scroll content for demo */
+    /* .content {
+      height: 2000px;
+      background: linear-gradient(white, lightgreen);
+      padding: 20px;
+    } */
+
+    /* Back to Top Button */
+    #topBtn {
+      display: none; /* hidden by default */
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #2e7d32;
+      color: white;
+      cursor: pointer;
+      padding: 12px 18px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    #topBtn:hover {
+      background-color: #1b5e20;
+    }

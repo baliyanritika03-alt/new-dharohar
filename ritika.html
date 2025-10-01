@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fertilizer Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .tab {
+      padding: 10px 15px;
+      background: #f2f2f2;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .tab.active {
+      background: #4CAF50;
+      color: white;
+    }
+    .products {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    .products.active {
+      display: grid;
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .product:hover {
+      background: #f9f9f9;
+    }
+    .product img {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+    }
+    .details {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .details img {
+      width: 200px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+ 
+  </style>
+</head>
+<body>
+
+  <h2>Fertilizer Products</h2>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="showCategory('water')">Water-Soluble Fertilizers</div>
+    <div class="tab" onclick="showCategory('primary')">Primary Fertilizers</div>
+    <div class="tab" onclick="showCategory('micro')">Micronutrient Fertilizers</div>
+    <div class="tab" onclick="showCategory('advanced')">Advanced Fertilizers</div>
+    <div class="tab" onclick="showCategory('other')">Other Fertilizers</div>
+  </div>
+
+  <!-- Product Sections -->
+  <div id="water" class="products active">
+    <div class="product" onclick="showDetails('Water Product 1','water1.jpg','This is water-soluble fertilizer product 1.','Tech Name 1','Used for crops.','1kg / 5kg / 10kg')">
+      <img src="water1.jpg" alt="">
+      <p>Water Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Water Product 2','water2.jpg','This is water-soluble fertilizer product 2.','Tech Name 2','Improves soil.','5kg / 20kg')">
+      <img src="water2.jpg" alt="">
+      <p>Water Fertilizer 2</p>
+    </div>
+    <div class="product" onclick="showDetails('Water Product 3','water2.jpg','This is water-soluble fertilizer product 2.','Tech Name 2','Improves soil.','5kg / 20kg')">
+      <img src="water2.jpg" alt="">
+      <p>Water Fertilizer 2</p>
+    </div>
+    <div class="product" onclick="showDetails('Water Product 4','water2.jpg','This is water-soluble fertilizer product 2.','Tech Name 2','Improves soil.','5kg / 20kg')">
+      <img src="water2.jpg" alt="">
+      <p>Water Fertilizer 2</p>
+    </div>
+    <div class="product" onclick="showDetails('Water Product 5','water2.jpg','This is water-soluble fertilizer product 2.','Tech Name 2','Improves soil.','5kg / 20kg')">
+      <img src="water2.jpg" alt="">
+      <p>Water Fertilizer 2</p>
+    </div>
+    <!-- Add 3 more products here -->
+  </div>
+
+  <div id="primary" class="products">
+    <div class="product" onclick="showDetails('Primary Fertilizer 1','primary1.jpg','This is primary fertilizer product 1.','Tech Name P1','Used for crops.','10kg / 20kg')">
+      <img src="primary1.jpg" alt="">
+      <p>Primary Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Primary Fertilizer 1','primary1.jpg','This is primary fertilizer product 1.','Tech Name P1','Used for crops.','10kg / 20kg')">
+      <img src="primary1.jpg" alt="">
+      <p>Primary Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Primary Fertilizer 1','primary1.jpg','This is primary fertilizer product 1.','Tech Name P1','Used for crops.','10kg / 20kg')">
+      <img src="primary1.jpg" alt="">
+      <p>Primary Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Primary Fertilizer 1','primary1.jpg','This is primary fertilizer product 1.','Tech Name P1','Used for crops.','10kg / 20kg')">
+      <img src="primary1.jpg" alt="">
+      <p>Primary Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Primary Fertilizer 1','primary1.jpg','This is primary fertilizer product 1.','Tech Name P1','Used for crops.','10kg / 20kg')">
+      <img src="primary1.jpg" alt="">
+      <p>Primary Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Primary Fertilizer 1','primary1.jpg','This is primary fertilizer product 1.','Tech Name P1','Used for crops.','10kg / 20kg')">
+      <img src="primary1.jpg" alt="">
+      <p>Primary Fertilizer 1</p>
+    </div>
+    <!-- Add 5 more products -->
+  </div>
+
+  <div id="micro" class="products">
+    <!-- Add 9 products -->
+    <div class="product" onclick="showDetails('Micronutrient Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="micro1.jpg" alt="">
+      <p>Micronutrient Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Micronutrient Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="micro1.jpg" alt="">
+      <p>Micronutrient Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Micronutrient Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="micro1.jpg" alt="">
+      <p>Micronutrient Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Micronutrient Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="micro1.jpg" alt="">
+      <p>Micronutrient Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Micronutrient Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="micro1.jpg" alt="">
+      <p>Micronutrient Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Micronutrient Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="micro1.jpg" alt="">
+      <p>Micronutrient Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Micronutrient Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="micro1.jpg" alt="">
+      <p>Micronutrient Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Micronutrient Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="micro1.jpg" alt="">
+      <p>Micronutrient Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('Micronutrient Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="micro1.jpg" alt="">
+      <p>Micronutrient Fertilizer 1</p>
+    </div>
+  </div>
+
+  <div id="advanced" class="products">
+    <!-- Add 8 products -->
+      <div class="product" onclick="showDetails('advance Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="advance     1.jpg" alt="">
+      <p>Advance Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('advance Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="advance     1.jpg" alt="">
+      <p>Advance Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('advance Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="advance     1.jpg" alt="">
+      <p>Advance Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('advance Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="advance     1.jpg" alt="">
+      <p>Advance Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('advance Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="advance     1.jpg" alt="">
+      <p>Advance Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('advance Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="advance     1.jpg" alt="">
+      <p>Advance Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('advance Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="advance     1.jpg" alt="">
+      <p>Advance Fertilizer 1</p>
+    </div>
+    <div class="product" onclick="showDetails('advance Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="advance     1.jpg" alt="">
+      <p>Advance Fertilizer 1</p>
+    </div>
+  </div>
+
+  <div id="other" class="products">
+    <!-- Add 5 products -->
+     <div class="product" onclick="showDetails('other Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="other     1.jpg" alt="">
+      <p>Other Fertilizer 1</p>
+    </div>
+     <div class="product" onclick="showDetails('other Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="other     1.jpg" alt="">
+      <p>Other Fertilizer 1</p>
+    </div>
+     <div class="product" onclick="showDetails('other Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="other     1.jpg" alt="">
+      <p>Other Fertilizer 1</p>
+    </div>
+     <div class="product" onclick="showDetails('other Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="other     1.jpg" alt="">
+      <p>Other Fertilizer 1</p>
+    </div>
+     <div class="product" onclick="showDetails('other Fertilizer 1','micro1.jpg','This is micronutrient fertilizer product 1.','Tech M1','For healthy plant growth.','500g / 1kg')">
+      <img src="other     1.jpg" alt="">
+      <p>Other Fertilizer 1</p>
+    </div>
+  </div>
+
+  <!-- Product Details -->
+  <div id="details" class="details"></div>
+
+  <script>
+    function showCategory(categoryId) {
+      document.querySelectorAll('.products').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(categoryId).classList.add('active');
+      event.target.classList.add('active');
+      document.getElementById('details').style.display = 'none';
+    }
+
+    function showDetails(name, img, desc, tech, usage, pack) {
+      const details = `
+        <h3>${name}</h3>
+        <img src="${img}" alt="${name}">
+        <p><strong>Description:</strong> ${desc}</p>
+        <p><strong>Technical Name:</strong> ${tech}</p>
+        <p><strong>Usage:</strong> ${usage}</p>
+        <p><strong>Package:</strong> ${pack}</p>
+      `;
+      const detailBox = document.getElementById('details');
+      detailBox.innerHTML = details;
+      detailBox.style.display = 'block';
+      detailBox.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+
+   <!-- Heading -->
+    <div id="get-touch" class="text-center mb-5">
+      <h2 class="fw-bold" id="Contact">Get In Touch</h2>
+      <p class="text-muted">We'd love to hear from you! Fill out the form or visit us at our office.</p>
+    </div>
+
+    <div class="row g-4"> 
+      
+      <!-- Contact Form -->
+      <div class="col-lg-6" style="width: 50%;">
+        <div class="card shadow border-0 h-100">
+          <div class="card-body p-4" style="width: 50%;">
+            <h5 class="mb-4">Send Us a Message</h5>
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-control" placeholder="Enter your name">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Your Email</label>
+                <input type="email" class="form-control" placeholder="Enter your email">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Your Message</label>
+                <textarea class="form-control" rows="5" placeholder="Type your message..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary px-4">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+</section>
+    
+      <!-- Map & Contact Info -->
+      <div class="col-lg-6">
+        <div class="card shadow border-0 h-100">
+          <div class="card-body p-0">
+            <!-- Google Map -->
+            <div style="height: 300px; width: 100%;">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d180167.63845610677!2d77.3094177!3d28.5676377!3m2!1i1024!2i768!4f13.1!2m1!1sRegd%20Office%20S%20No%20COD%203rd%20Floor%20Dharampali%20Palace%20Bhoja%20Market%20Atta%20Sector%2027%20Noida%20201301%20UP%20INDIA!5e1!3m2!1sen!2sin!4v1755246958312!5m2!1sen!2sin" width="545" height="300"
+             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="p-4">
+              <h5>Contact Information</h5>
+              <p class="mb-2"><i class="bi bi-geo-alt-fill text-primary"></i>Regd. Office : S.No. COD, 3rd Floor, Dharampali Palace Bhoja Market Atta Sector-27, Noida - 201301 (U.P.) INDIA</p>
+              <p class="mb-2"><i class="bi bi-telephone-fill text-primary"></i> +91 7983391779</p>
+              <p><i class="bi bi-envelope-fill text-primary"></i>support@phoenixplantslifesaverpvt</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
+        
