@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertiliser Categories</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f9f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2b4a3d;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .category {
+      width: 200px;
+      text-align: center;
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    }
+
+    .category img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+
+    }
+
+    .category h3 {
+      margin-top: 10px;
+      color: #333;
+      height: 8px;
+
+
+    }
+
+    .products {
+      display: none;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .product {
+      width: 160px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 15px;
+      background: #2b4a3d;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: #1e3228;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Fertiliser Categories</h2>
+
+  <!-- Categories Section -->
+  <div id="categorySection" class="categories">
+    <div class="category" onclick="showProducts('advance')">
+      <img src="advancefertilizer.jpg" alt="Advance Fertiliser">
+      <h3>Advance Fertilisers</h3>
+    </div>
+    <div class="category" onclick="showProducts('primary')">
+      <img src="primaryfertiliser.jpg" alt="Primary Fertiliser">
+      <h3>Primary Fertilisers</h3>
+    </div>
+    
+    <div class="category" onclick="showProducts('micronutrient')">
+      <img src="micronutrientfertilizer.jpg" alt="Chelated Fertilizer">
+      <h3>micro-nutrient fertilizer</h3>
+    </div>
+    <div class="category" onclick="showProducts('water')">
+      <img src="watersolublefertiliser.jpg" alt="Water Soluble Fertilizer">
+      <h3>Water Soluble Fertilisers</h3>
+    </div>
+  </div>
+
+  <!-- Advance Fertilisers -->
+  <div id="advance" class="products">
+    <h2>Advance Fertilisers</h2>
+    <div class="product-list">
+      <div class="product"><img src="a1.jpg" alt=""><p>Advance Fertiliser 1</p></div>
+      <div class="product"><img src="a2.jpg" alt=""><p>Advance Fertiliser 2</p></div>
+      <div class="product"><img src="a3.jpg" alt=""><p>Advance Fertiliser 3</p></div>
+      <div class="product"><img src="a4.jpg" alt=""><p>Advance Fertiliser 4</p></div>
+      <div class="product"><img src="a5.jpg" alt=""><p>Advance Fertiliser 5</p></div>
+    </div>
+    <a class="back-btn" onclick="goBack()">← Back to Categories</a>
+  </div>
+
+  <!-- Primary Fertilisers -->
+  <div id="primary" class="products">
+    <h2>Primary Fertilisers</h2>
+    <div class="product-list">
+      <div class="product"><img src="p1.jpg" alt=""><p>Primary Fertiliser 1</p></div>
+      <div class="product"><img src="p2.jpg" alt=""><p>Primary Fertiliser 2</p></div>
+    </div>
+    <a class="back-btn" onclick="goBack()">← Back to Categories</a>
+  </div>
+
+  
+
+  <!-- micro-nutrient Fertilisers -->
+  <div id="chelated" class="products">
+    <h2>Chelated Fertilisers</h2>
+    <div class="product-list">
+      <div class="product"><img src="c1.jpg" alt=""><p>micronutrient</p></div>
+      <div class="product"><img src="c2.jpg" alt=""><p>micronutrient Fertiliser 2</p></div>
+    </div>
+    <a class="back-btn" onclick="goBack()">← Back to Categories</a>
+  </div>
+
+  <!-- Water Soluble Fertilisers -->
+  <div id="water" class="products">
+    <h2>Water Soluble Fertilisers</h2>
+    <div class="product-list">
+      <div class="product"><img src="w1.jpg" alt=""><p>Water Soluble Fertiliser 1</p></div>
+      <div class="product"><img src="w2.jpg" alt=""><p>Water Soluble Fertiliser 2</p></div>
+    </div>
+    <a class="back-btn" onclick="goBack()">← Back to Categories</a>
+  </div>
+
+  <script>
+    function showProducts(category) {
+      document.getElementById("categorySection").style.display = "none";
+      document.querySelectorAll('.products').forEach(div => div.style.display = 'none');
+      document.getElementById(category).style.display = 'block';
+    }
+
+    function goBack() {
+      document.querySelectorAll('.products').forEach(div => div.style.display = 'none');
+      document.getElementById("categorySection").style.display = "flex";
+    }
+  </script>
+
+</body>
+</html>
